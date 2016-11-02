@@ -1,9 +1,7 @@
 /**
  * Created by juanitasoranno on 10/27/16.
  */
-var http = require("http");
-var fs = require("fs");
-var url = require("url");
+var path = require("path");
 var express = require("express");
 var bodyParser = require("body-parser");
 
@@ -14,3 +12,5 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+
+require("./app/routing/api-routes.js")(app);
